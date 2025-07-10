@@ -15,27 +15,29 @@ typedef pair<lli,lli> ii;
 #define fore(i,a,b) for(lli i = a; i < (b); i++)
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
-int main(){ _
-    lli n;
-    cin >> n;
-    string st;
-    cin >> st;
+const lli MOD = 1e7+7;
+lli n;
 
-    vector<string> a(27);
-
-    fore(i, 1, 27){
-        string curr = "";
-        fore(j,0,i){
-            curr += "1";
+lli binpow(lli a, lli b){
+    a %= n;
+    lli res = 1;
+    while(b > 0){
+        if(b & 1){
+            res = res * a % n;
         }
-        fore(j,0,27-i){
-            curr += "0";
-        }
-        a[i] = curr;
+        a = a * a % n;
+        b >>= 1;
     }
+    return res;
+}
 
-    fore(i,0,a.size()){
-        cout << a[i] << endl;
+int main(){ _
+    lli t;
+    cin >> t;
+    while(t--){
+        lli x, y;
+        cin >> x >> y >> n;
+        cout << binpow(x,y) % n << endl;;
     }
     return 0;
 }

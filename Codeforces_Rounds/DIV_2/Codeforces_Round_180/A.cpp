@@ -15,27 +15,23 @@ typedef pair<lli,lli> ii;
 #define fore(i,a,b) for(lli i = a; i < (b); i++)
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
+const lli MOD = 1e9 + 7;
+const lli INF = 1e9;
+const ld EPS = 1e-9;
+
 int main(){ _
-    lli n;
-    cin >> n;
-    string st;
-    cin >> st;
-
-    vector<string> a(27);
-
-    fore(i, 1, 27){
-        string curr = "";
-        fore(j,0,i){
-            curr += "1";
+    lli t;
+    cin >> t;
+    while(t--){
+        lli a, x, y;
+        cin >> a >> x >> y;
+        lli mini = min(x,y);
+        lli maxi = max(x,y);
+        if(a < mini || a > maxi){
+            cout << "YES" << endl;
+        }else{
+            cout << "NO" << endl;
         }
-        fore(j,0,27-i){
-            curr += "0";
-        }
-        a[i] = curr;
-    }
-
-    fore(i,0,a.size()){
-        cout << a[i] << endl;
     }
     return 0;
 }

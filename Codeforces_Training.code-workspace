@@ -1,0 +1,71 @@
+{
+	"folders": [
+        {
+            "path": "."
+        }
+    ],
+	"settings": {
+	   "files.associations": {
+        "iostream": "cpp",
+        "chrono": "cpp",
+        "tuple": "cpp",
+        "cmath": "cpp",
+        "iomanip": "cpp",
+        "limits": "cpp",
+        "ostream": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "initializer_list": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "regex": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "valarray": "cpp",
+        "vector": "cpp",
+        "__string": "cpp",
+        "bitset": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "utility": "cpp",
+        "complex": "cpp",
+        "iosfwd": "cpp",
+        "ios": "cpp",
+        "type_traits": "cpp",
+        "memory": "cpp"
+    },
+	   "editor.tabCompletion": "on",
+	 "editor.acceptSuggestionOnEnter": "off",
+	 "editor.hover.enabled": false,
+	 "editor.minimap.enabled": false,
+	 "editor.parameterHints.enabled": false,
+	 "editor.quickSuggestions": {
+		 "comments": "off",
+		 "strings": "off",
+		 "other": "off"
+	   },
+	 "editor.quickSuggestionsDelay": 10,
+	 "editor.suggest.snippetsPreventQuickSuggestions": true,
+	 "editor.suggestOnTriggerCharacters": false,
+	 "editor.wordBasedSuggestions": "off",
+	   "editor.detectIndentation": false,
+	   "editor.tabSize": 4,
+	   "editor.fontSize": 13,
+	   "files.watcherExclude": {
+		 "**/target": true
+	   },
+	   // "editor.acceptSuggestionOnCommitCharacter": false,
+	}
+   }

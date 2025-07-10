@@ -16,26 +16,14 @@ typedef pair<lli,lli> ii;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 int main(){ _
-    lli n;
-    cin >> n;
-    string st;
-    cin >> st;
-
-    vector<string> a(27);
-
-    fore(i, 1, 27){
-        string curr = "";
-        fore(j,0,i){
-            curr += "1";
+    lli l,r,k;
+    cin >> l >> r >> k;
+    lli ans = 0;
+    fore(i,l,r+1){
+        if(i % k == 0 && i >= k){
+            ans++;
         }
-        fore(j,0,27-i){
-            curr += "0";
-        }
-        a[i] = curr;
     }
-
-    fore(i,0,a.size()){
-        cout << a[i] << endl;
-    }
+    cout << ans << endl;
     return 0;
 }
