@@ -27,9 +27,22 @@ int main(){ _
     while(t--){
         lli n;
         cin >> n;
-        vi a(n);
+        vi ans(n+1), freq(n+1, 0), diff(n+2, 0);
         fore(i,0,n){
-            cin >> a[i];
+            lli num;
+            cin >> num;
+            freq[num]++;
+        }
+        fore(i,0,n+1){
+            diff[freq[i]]++;
+            diff[n-i+1]--;
+            if(freq[i] == 0) break;
+        }
+        ans[0] = diff[0];
+        cout << ans[0] << " ";
+        fore(k,1,n+1){
+            ans[k] = ans[k-1] + diff[k];
+            cout << ans[k] << (k != n ? ' ' : endl);
         }
     }
     return 0;
