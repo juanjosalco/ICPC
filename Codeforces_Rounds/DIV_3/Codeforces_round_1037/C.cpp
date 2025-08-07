@@ -15,46 +15,35 @@ typedef pair<lli,lli> ii;
 #define fore(i,a,b) for(lli i = a; i < (b); i++)
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
-const lli MOD = 1e9+7;
-const lli INF = 1e9;
-const ld EPS = 1e-9;
-
-lli mcd(lli a, lli b){return b ? mcd(b, a%b):a;}
+lli mcd(lli a, lli b){return b ? mcd(b, a % b): a;}
 lli mcm(lli a, lli b){return (!a || !b) ? 0 : a * b / mcd(a,b);}
+
+const lli INF = 1e9;
+const lli MOD = 1e9+7;
+const ld EPS = 1e-9;
 
 int main(){ _
     lli t;
     cin >> t;
     while(t--){
-        lli n;
-        cin >> n;
+        lli n, k;
+        cin >> n >> k;
         vi a(n);
         fore(i,0,n){
             cin >> a[i];
         }
-        vi b = a;
-        vi c = a;
+        lli start = a[k-1];
+        sort(all(a));
+        lli d = abs(start-1)+1;
         bool fl = false;
-        fore(i,1,n){
-            if(abs(a[i]-a[i-1]) <= 1){
-                cout << 0 << endl;
+        fore(i,0,n-1){
+            if(abs(a[i]-a[i+1]) > d){
+                cout << "NO" << endl;
                 fl = true;
                 break;
             }
         }
-        if(!fl){ 
-            sort(all(b));
-            if(b == a){
-                cout << -1 << endl;
-                continue;
-            }
-            sort(c.begin(), c.end(), greater<lli>());
-            if(c == a){
-                cout << -1 << endl;
-                continue;
-            }
-            cout << 1 << endl;
-        }
+        if(!fl) cout << "YES" << endl;
     }
     return 0;
 }

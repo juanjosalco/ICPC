@@ -25,24 +25,23 @@ int main(){ _
     lli t;
     cin >> t;
     while(t--){
-        lli n, j, k;
-        cin >> n >> j >> k;
-        vi a(n);
-        lli maxi = LLONG_MIN;
-        fore(i,0,n){
-            cin >> a[i];
-            maxi = max(maxi, a[i]);
-        }
-        lli sl = a[j-1];
-        if(sl == maxi){
-            cout << "YES" << endl;
-        }else{
-            if(k >= 2){
-                cout << "YES" << endl;
-            }else{
-                cout << "NO" << endl; 
-            }
-        }
+       lli n;
+       cin >> n;
+       string st;
+       cin >> st;
+       map<char,lli> mp;
+       fore(i,0,n){
+         mp[st[i]]++;
+       }
+       bool fl = false;
+       fore(i,1,n-1){
+         if(mp[st[i]] > 1){
+            cout << "Yes" << endl;
+            fl = true;
+            break;
+         }
+       }
+       if(!fl) cout << "No" << endl;
     }
     return 0;
 }

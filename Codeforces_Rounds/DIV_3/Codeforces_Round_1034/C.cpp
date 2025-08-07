@@ -25,31 +25,39 @@ int main(){ _
     lli t;
     cin >> t;
     while(t--){
-        lli n;
-        cin >> n;
-        vi a(n);
+        lli n, m;
+        cin >> n >> m;
+        vector<vi> mtx(n+1, vi(m+1));
         lli maxi = LLONG_MIN;
-        lli mini = LLONG_MAX;
+        lli cnt = 0;
         fore(i,0,n){
-            cin >> a[i];
+            fore(j,0,m){
+                cin >> mtx[i][j];
+                if (mtx[i][j] > maxi) {
+                    maxi = mtx[i][j], cnt = 1;
+                } else if (mtx[i][j] == maxi) {
+                    cnt++;
+                }
+            }
         }
-        string ans = "";
-        vi b(n);
+        vi rows(n), cols(m);
         fore(i,0,n){
-            if(a[i] < mini) b[i]++;
-            mini = min(mini, a[i]);
+            fore(j,0,m){
+                if(mtx[i][j] == maxi){
+                    rows[i]++;
+                    cols[j]++;
+                }
+            }
         }
-        lli j = n-1;
-        while(j >= 0){
-            if(a[j] > maxi) b[j]++;
-            maxi = max(maxi, a[j]);
-            j--;
+        lli flag = 0;
+        fore(i,0,n) {
+            fore(j,0,m) {
+                if (rows[i] + cols[j] - (mtx[i][j] == maxi) == cnt) {
+                    flag = 1;
+                }
+            }
         }
-        fore(i,0,n){
-            if(b[i] > 0) cout << 1;
-            else cout << 0;
-        }
-        cout << endl;
+        cout << maxi - flag << '\n';
     }
     return 0;
 }
