@@ -15,30 +15,19 @@ typedef pair<lli,lli> ii;
 #define fore(i,a,b) for(lli i = a; i < (b); i++)
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
+lli const MOD = 998244353;
+
 int main(){ _
-    lli t;
-    cin >> t;
-
-    while(t--){
-        string str;
-        cin >> str;
-        lli cont = 0;
-        lli cut = 0;
-        fore(i,0,str.size()){
-
-            if(str[i] == 'B' and cont <0){
-                cont = 1;
-                cut = i;
-            }
-            else if(str[i] == 'B'){
-                cont++;
-            }
-            else{
-                cont--;
-            }
+    lli n;
+    cin >> n;
+    while(n != 1){
+        cout << n << " ";
+        if(n % 2 == 0) n/=2;
+        else{
+            n*=3;
+            n++;
         }
-        cout << cut<< endl;
-
     }
+    cout << 1 << endl;
     return 0;
 }
